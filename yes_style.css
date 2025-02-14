@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.header_text {
+    font-size: 3em;
+    color: #d32f2f;
+}
+
+.gif_container img {
+    width: 100%; 
+    max-width: 500px; 
+    height: auto; 
+}
+.next-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.next-button:hover {
+    background-color: #e91e63;
+    transform: scale(1.1);
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .next-button {
+        font-size: 1.2em;
+        padding: 8px 16px;
+    }
+}
+/* Styling slider */
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide {
+    display: none;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Animasi fade */
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .slider {
+        max-width: 90%;
+    }
+
+    .body_text {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+/* Efek mengetik perlahan */
+.romantic_text {
+    display: inline-block;
+    font-size: 1.2em;
+    max-width: 90%;
+    line-height: 1.5;
+    text-align: center;
+    word-wrap: break-word;
+    opacity: 0; /* Mulai dari transparan */
+    animation: fadeInText 3s ease-in forwards, glowing 2s infinite alternate;
+}
+
+/* Animasi muncul perlahan */
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efek berkedip lembut */
+@keyframes glowing {
+    from {
+        text-shadow: 0 0 5px rgba(255, 105, 180, 0.5), 0 0 10px rgba(255, 105, 180, 0.5);
+    }
+    to {
+        text-shadow: 0 0 10px rgba(255, 105, 180, 0.8), 0 0 15px rgba(255, 105, 180, 0.8);
+    }
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .romantic_text {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
+/* Styling tombol musik di atas */
+.music-button {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    margin: 20px auto;
+    display: block;
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    position: fixed; /* Tetap di atas layar */
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000; /* Pastikan tombol berada di atas semua elemen */
+}
+
+/* Efek hover yang diperbaiki */
+.music-button:hover {
+    background-color: #e91e63;
+    transform: translateX(-50%) scale(1.05); /* Memastikan tombol tetap di tengah saat diperbesar */
+}
+
+/* Tambahkan padding di atas agar slider tidak tertindih tombol */
+.container {
+    padding-top: 80px; /* Tambahkan jarak agar slider tidak terlalu dekat dengan tombol */
+}
